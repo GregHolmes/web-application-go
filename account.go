@@ -7,6 +7,8 @@ import (
 )
 
 func account(w http.ResponseWriter, r *http.Request) {
+	isAuthenticated(w, r)
+
 	tmpl, err := template.ParseFiles("src/template/account.html")
 
 	if err != nil {
@@ -14,8 +16,6 @@ func account(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if r.Method != http.MethodPost {
-		fmt.Println("Account Not method post")
-		fmt.Println(r.Method)
 		tmpl.Execute(w, nil)
 		return
 	}
