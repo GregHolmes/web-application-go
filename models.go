@@ -17,8 +17,13 @@ type User struct {
 
 type Conversation struct {
 	gorm.Model
-	FromPhoneNumber string
-	ToPhoneNumber   string
+	Msisdn           string
+	To               string
+	MessageId        string
+	Text             string
+	Type             string
+	Keyword          string
+	MessageTimestamp string
 }
 
 func connectDb() {

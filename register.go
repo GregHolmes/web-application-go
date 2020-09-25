@@ -13,6 +13,8 @@ func register(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		fmt.Println(err)
+
+		return
 	}
 
 	if r.Method != http.MethodPost {
@@ -27,17 +29,12 @@ func register(w http.ResponseWriter, r *http.Request) {
 	}
 
 	hashedPassword, _ := HashPassword(details.Password)
-
-	fmt.Println(hashedPassword)
-
 	details.Password = hashedPassword
-
-	fmt.Println(hashedPassword)
 
 	user1 := User{Email: details.Email, Password: details.Password}
 
-	fmt.Println(user1.Email)
 	_ = db.Create(&user1)
+
 }
 
 func HashPassword(password string) (string, error) {
