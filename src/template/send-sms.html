@@ -2,18 +2,19 @@
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
+
     <body>
         <div class="container-fluid">
-            <h1>Hello!</h1>
+            <p>I'm going to send some SMS Messages</p>
 
             <form method="POST">
                 <div class="form-group">
-                    <label>Email:</label>
-                    <input type="text" name="email" class="form-control">
+                    <label>To:</label>
+                    <input type="text" name="to" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Password:</label>
-                    <input type="password" name="password" class="form-control">
+                    <label>Content:</label>
+                    <input type="text" name="content" class="form-control">
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary">
